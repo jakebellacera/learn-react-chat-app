@@ -1,0 +1,58 @@
+.sidebar {
+  $font-color: #FFF;
+  $bg-color: #303E4D;
+
+  background-color: $bg-color;
+  color: darken($font-color, 20%);
+  max-height: 100%;
+  overflow: auto;
+
+  a {
+    color: inherit;
+  }
+
+  &-section {
+    &-header {
+      padding: .5rem 1rem 0;
+    }
+
+    &-list {
+      list-style: none;
+      padding: .5rem 0;
+      margin: 0;
+
+      a {
+        display: block;
+        text-decoration: none;
+        padding: .5rem 1rem;
+
+        &::before {
+          margin-right: .25rem;
+        }
+
+        &:hover {
+          background-color: lighten($bg-color, 10%);
+        }
+
+        &:hover,
+        &.selected {
+          color: $font-color;
+        }
+
+        &.selected {
+          background-color: lighten($bg-color, 20%);
+        }
+      }
+
+      &-item {
+        &-room {
+          a {
+            &::before {
+              content: "#";
+            }
+          }
+        }
+      }
+    }
+  }
+}

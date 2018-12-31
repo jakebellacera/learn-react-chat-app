@@ -1,0 +1,8 @@
+.main {
+  background-color: #FFF;
+  max-height: 100vh;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: auto max-content;
+  height: 100%;
+}
