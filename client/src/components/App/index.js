@@ -6,9 +6,11 @@ import Meta from '../Meta';
 
 const App = () => (
   <div className="app">
-    <Sidebar />
-    <Main />
-    <Meta />
+    <div className="app-container">
+      <Sidebar />
+      <Main />
+      <Meta />
+    </div>
   </div>
 );
 
