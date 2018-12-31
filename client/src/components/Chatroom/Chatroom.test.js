@@ -3,5 +3,11 @@ import React from 'react';
 import Chatroom from '.';
 
 it('renders without crashing', () => {
-  shallow(<Chatroom messages={[]} addMessage={jest.fn()} />);
+  shallow(
+    <Chatroom
+      username="foobar"
+      messages={[]}
+      addMessage={jest.fn()}
+    />
+  );
 });

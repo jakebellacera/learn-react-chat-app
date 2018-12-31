@@ -8,15 +8,11 @@ it('renders without crashing', () => {
 });
 
 it('renders the message body', () => {
-  const body1 = 'Sup dawg';
-  const body2 = 'Yooo';
-  const messages = [
-    {body: body1},
-    {body: body2}
-  ];
+  const message1 = {username: 'foo', body: 'Sup dawg'};
+  const message2 = {username: 'bar', body: 'Yooo'};
   const component = mount(
-    <MessageList messages={messages} />
+    <MessageList messages={[message1, message2]} />
   );
-  expect(component.find('li').first().text()).toEqual(body1);
-  expect(component.find('li').last().text()).toEqual(body2);
+  expect(component.find('li').first().find('.messagelist-item-body').text()).toEqual(message1.body);
+  expect(component.find('li').last().find('.messagelist-item-body').text()).toEqual(message2.body);
 });

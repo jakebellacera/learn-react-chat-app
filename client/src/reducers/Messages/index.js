@@ -2,6 +2,7 @@ const message = (state, action) => {
   switch(action.type) {
     case 'ADD_MESSAGE':
       return {
+        username: action.username,
         body: action.body,
         createdAt: action.createdAt
       };

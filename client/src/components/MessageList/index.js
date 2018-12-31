@@ -4,9 +4,14 @@ import './MessageList.scss';
 
 const MessageList = ({ messages }) => (
   <ul className="messagelist">
-    {messages.map(({ body }, i) => (
+    {messages.map(({ username, body }, i) => (
       <li key={i} className="messagelist-item">
-        {body}
+        <div className="messagelist-item-username">
+          {username}
+        </div>
+        <div className="messagelist-item-body">
+          {body}
+        </div>
       </li>
     ))}
   </ul>

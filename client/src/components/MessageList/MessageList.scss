@@ -8,5 +8,10 @@
   &-item {
     padding: .5rem 1rem;
     background-color: #FFF;
+
+    &-username {
+      font-weight: bold;
+      margin-bottom: .5rem;
+    }
   }
 }
