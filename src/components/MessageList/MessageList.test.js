@@ -4,6 +4,7 @@ import MessageList from '.';
 
 it('renders without crashing', () => {
   shallow(<MessageList messages={[]} />);
+  shallow(<MessageList messages={[{body: "Sup dawg", createdAt: Date.now()}]} />);
 });
 
 it('renders the message body', () => {

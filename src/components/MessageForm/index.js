@@ -12,11 +12,7 @@ class MessageForm extends Component {
   }
 
   handleSubmit(e) {
-    const message = {
-      body: this.state.message
-    };
-
-    this.props.onSendMessage(message);
+    this.props.onSendMessage(this.state.message);
     this.setState({message: ''});
 
     e.preventDefault();

@@ -4,9 +4,9 @@ import './MessageList.scss';
 
 const MessageList = ({ messages }) => (
   <ul className="messagelist">
-    {messages.map((msg) => (
-      <li className="messagelist-item">
-        {msg.body}
+    {messages.map(({ body }, i) => (
+      <li key={i} className="messagelist-item">
+        {body}
       </li>
     ))}
   </ul>

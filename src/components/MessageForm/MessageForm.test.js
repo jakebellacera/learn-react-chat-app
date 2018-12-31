@@ -15,7 +15,7 @@ it('sends a message on submit', () => {
   );
   component.find('input').simulate('change', { target: { value: body }});
   component.find('form').simulate('submit');
-  expect(sendMessageMock.mock.results[0].value).toEqual({ body });
+  expect(sendMessageMock.mock.results[0].value).toEqual(body);
 });
 
 it('clears the text input on submit', () => {

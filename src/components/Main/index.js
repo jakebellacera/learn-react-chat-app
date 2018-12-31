@@ -1,35 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Main.scss';
-import MessageList from '../MessageList';
-import MessageForm from '../MessageForm';
+import ChatroomContainer from '../../containers/Chatroom';
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state ={
-      messages: []
-    };
-  }
-
-  handleMessageSend(message) { 
-    this.setState({
-      messages: [...this.state.messages, message]
-    });
-  }
-
-  render() {
-    return (
-      <div className="main">
-        <MessageList
-          messages={this.state.messages}
-        />
-        <MessageForm
-          onSendMessage={(msg) => this.handleMessageSend(msg)}
-        />
-      </div>
-    );
-  }
-};
+const Main = () => (
+  <div className="main">
+    <ChatroomContainer />
+  </div>
+);
 
 export default Main;
