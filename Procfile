@@ -1,1 +1,1 @@
-web: yarn --cwd server start
+web: yarn --cwd server server
