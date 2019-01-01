@@ -4,7 +4,7 @@ import ChatroomContainer from '../../containers/Chatroom';
 
 const Main = () => (
   <div className="main">
-    <ChatroomContainer />
+    <ChatroomContainer room="general" />
   </div>
 );
 

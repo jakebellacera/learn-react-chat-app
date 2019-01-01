@@ -10,18 +10,19 @@ class Chatroom extends Component {
   }
 
   render() {
-    const { username, messages, postMessage } = this.props;
+    const { room, username, messages, postMessage } = this.props;
 
     return (
       <div className="chatroom">
-        <MessageList messages={messages} />
-        <MessageForm onSendMessage={(msg) => postMessage(username, msg)} />
+        <MessageList room={room} messages={messages} />
+        <MessageForm onSendMessage={(msg) => postMessage(room, username, msg)} />
       </div>
     );
   }
 }
 
 Chatroom.propTypes = {
+  room: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   messages: PropTypes.array.isRequired,
   postMessage: PropTypes.func.isRequired

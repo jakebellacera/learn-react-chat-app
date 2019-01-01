@@ -8,6 +8,7 @@ it('renders without crashing', () => {
       username="foobar"
       messages={[]}
       postMessage={jest.fn()}
+      subscribeToMessages={jest.fn()}
     />
   );
 });

@@ -7,14 +7,15 @@ describe('messages reducer', () => {
   });
 
   it('should handle ADD_MESSAGE', () => {
+    const room = 'general';
     const username = 'foobar';
     const body = 'Sup dawg';
     const now = Date.now();
-    jest.spyOn(Date, 'now').mockImplementation(() => now)
-    const action = actions.addMessage(username, body);
+    const action = actions.addMessage(room, username, body, now);
 
     expect(reducer(undefined, action)).toEqual([
       {
+        room,
         username,
         body,
         createdAt: now

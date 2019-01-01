@@ -12,13 +12,19 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 // Put all API endpoints under '/api'
-app.route('/api/messages')
+app.route('/api/:room/messages')
   .post((req, res) => {
+    console.log(req.body);
     if (typeof req.body !== 'object' || (!req.body.username || !req.body.body)) {
       return res.status(400).json({'error': 'Invalid request.'});
     }
     const now = new Date();
-    io.emit('message', JSON.stringify({ ...req.body, created_at: now.toJSON()}));
+    const payload = {
+      ...req.body,
+      room: req.params.room,
+      created_at: now.toJSON()
+    };
+    io.emit('message', JSON.stringify(payload));
     res.json({'success': 'Message received.'});
   });
 
