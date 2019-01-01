@@ -8,10 +8,23 @@
   &-item {
     padding: .5rem 1rem;
     background-color: #FFF;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: .5rem;
 
     &-username {
       font-weight: bold;
-      margin-bottom: .5rem;
+    }
+
+    &-date {
+      font-size: .9rem;
+      color: #666;
+      align-self: end;
+    }
+
+    &-body {
+      grid-row: 2;
+      grid-column: span 2;
     }
   }
 }
