@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addMessage } from '../../actions';
+import { postMessage, subscribeToMessages } from '../../actions';
 import Chatroom from '../../components/Chatroom';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addMessage: (username, body) => dispatch(addMessage(username, body))
+  postMessage: (username, body) => dispatch(postMessage(username, body)),
+  subscribeToMessages: (cb) => dispatch(subscribeToMessages())
 });
 
 export default connect(

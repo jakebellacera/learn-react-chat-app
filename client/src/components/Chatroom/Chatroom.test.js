@@ -7,7 +7,7 @@ it('renders without crashing', () => {
     <Chatroom
       username="foobar"
       messages={[]}
-      addMessage={jest.fn()}
+      postMessage={jest.fn()}
     />
   );
 });
