@@ -3,5 +3,7 @@ import React from 'react';
 import Sidebar from '.';
 
 it('renders without crashing', () => {
-  shallow(<Sidebar />);
+  shallow(
+    <Sidebar room={'foo'} />
+  );
 });

@@ -4,7 +4,7 @@ import Chatroom from '../../components/Chatroom';
 
 const mapStateToProps = (state, ownProps) => ({
   username: state.user.username,
-  messages: state.messages,
+  messages: state.messages.filter(m => m.room === ownProps.room),
   room: ownProps.room
 });
 

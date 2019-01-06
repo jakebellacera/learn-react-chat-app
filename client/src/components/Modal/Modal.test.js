@@ -8,20 +8,29 @@ describe('modal component', () => {
   });
 
   it('does not give users the option to close the dialog by default', () => {
+    const handleCloseMock = jest.fn();
     const component = mount(
-      <Modal render={jest.fn()} />
+      <Modal
+        render={jest.fn()}
+        handleClose={handleCloseMock}
+      />
     );
     expect(component.exists('.modal-dialog-close')).toEqual(false);
     component.find('.modal-backdrop').simulate('click');
-    expect(component.state().isOpen).toEqual(true);
+    expect(handleCloseMock.mock.calls.length).toEqual(0);
   });
 
   it('the userCanClose prop gives users the option to close the dialog', () => {
+    const handleCloseMock = jest.fn();
     const component = mount(
-      <Modal render={jest.fn()} userCanClose />
+      <Modal
+        userCanClose
+        render={jest.fn()}
+        handleClose={handleCloseMock}
+      />
     );
     expect(component.exists('.modal-dialog-close')).toEqual(true);
     component.find('.modal-backdrop').simulate('click');
-    expect(component.state().isOpen).toEqual(false);
+    expect(handleCloseMock.mock.calls.length).toEqual(1);
   });
 });

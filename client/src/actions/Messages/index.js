@@ -2,7 +2,7 @@ export const postMessage = (room, username, body) => ({
   fetch: `/api/${room}/messages`,
   fetchOptions: {
     method: 'POST',
-    body: JSON.stringify({ username, body })
+    body: JSON.stringify({ room, username, body })
   }
 });
 

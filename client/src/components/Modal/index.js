@@ -5,29 +5,20 @@ import './Modal.scss';
 class Modal extends Component {
   static propTypes = {
     render: PropTypes.func.isRequired,
+    open: PropTypes.bool,
     userCanClose: PropTypes.bool,
     solidBackdrop: PropTypes.bool
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: true
-    };
-  }
-
   closeModal() {
-    this.setState({ isOpen: false });
-  }
-
-  openModal() {
-    this.setState({ isOpen: true });
+    if (this.props.handleClose) {
+      this.props.handleClose();
+    }
   }
 
   render() {
     let classNames = 'modal';
-    if (this.state.isOpen) {
+    if (this.props.open) {
       classNames += ' open';
     }
 

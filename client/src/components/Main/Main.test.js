@@ -3,5 +3,5 @@ import React from 'react';
 import Main from '.';
 
 it('renders without crashing', () => {
-  shallow(<Main />);
+  shallow(<Main room="foo" />);
 });
