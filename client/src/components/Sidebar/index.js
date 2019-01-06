@@ -1,10 +1,10 @@
 import React from 'react';
-import RoomsList from '../../containers/RoomsList';
+import RoomList from '../../containers/RoomList';
 import './Sidebar.scss';
 
 const Sidebar = ({ room }) => (
   <div className="sidebar">
-    <RoomsList room={room} />
+    <RoomList room={room} />
   </div>
 );
 
