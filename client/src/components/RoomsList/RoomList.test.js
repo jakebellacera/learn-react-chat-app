@@ -1,9 +1,13 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Sidebar from '.';
+import RoomList from '.';
 
 it('renders without crashing', () => {
   shallow(
-    <Sidebar />
+    <RoomList
+      rooms={['foo']}
+      room="foo"
+      addRoom={jest.fn()}
+    />
   );
 });
