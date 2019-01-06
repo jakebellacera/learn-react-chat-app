@@ -16,4 +16,12 @@ describe('rooms reducer', () => {
       room
     ].sort());
   });
+
+  it('should handle REMOVE_ROOM', () => {
+    const room = 'foo';
+    const action = actions.removeRoom(room);
+    expect(reducer(['general', 'foo'], action)).toEqual([
+      'general'
+    ]);
+  });
 });

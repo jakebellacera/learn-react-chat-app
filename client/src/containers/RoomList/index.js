@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addRoom } from '../../actions';
+import { addRoom, removeRoom } from '../../actions';
 import RoomList from '../../components/RoomList';
 
 const mapStateToProps = (state) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addRoom: (room) => dispatch(addRoom(room))
+  addRoom: (room) => dispatch(addRoom(room)),
+  removeRoom: (room) => dispatch(removeRoom(room))
 });
 
 export default connect(

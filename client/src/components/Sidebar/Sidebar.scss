@@ -47,6 +47,7 @@
         display: block;
         text-decoration: none;
         padding: .5rem 1rem;
+        line-height: 1;
 
         &::before {
           margin-right: .25rem;
@@ -67,11 +68,38 @@
       }
 
       &-item {
+        position: relative;
+
         &-room {
           a {
             &::before {
               content: "#";
             }
+          }
+        }
+
+        &-remove {
+          position: absolute;
+          top: 0;
+          right: 0;
+          appearance: none;
+          border: 0;
+          background: transparent;
+          height: 2rem;
+          width: 2rem;
+          line-height: 0;
+          padding: 0;
+          font-size: 1rem;
+          font-weight: bold;
+          color: #FFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          opacity: 0;
+
+          &:hover {
+            opacity: 1;
           }
         }
       }

@@ -5,6 +5,8 @@ const rooms = (state = ['general'], action) => {
         ...state,
         action.room
       ].filter((x, i, self) => self.indexOf(x) === i).sort();
+    case 'REMOVE_ROOM':
+      return state.filter(x => x !== action.room);
     default:
       return state;
   }

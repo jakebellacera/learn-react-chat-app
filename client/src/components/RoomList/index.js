@@ -7,7 +7,8 @@ class RoomList extends Component {
   static propTypes = {
     rooms: PropTypes.arrayOf(PropTypes.string).isRequired,
     room: PropTypes.string.isRequired,
-    addRoom: PropTypes.func.isRequired
+    addRoom: PropTypes.func.isRequired,
+    removeRoom: PropTypes.func.isRequired
   };
 
   constructor(props) {
@@ -66,10 +67,20 @@ class RoomList extends Component {
             {this.props.rooms ? this.props.rooms.map((room) => (
               <li
                 key={room}
-                className="sidebar-section-list-item sidebar-section-list-item-room">
+                className="sidebar-section-list-item sidebar-section-list-item-room"
+              >
                 <NavLink to={`/rooms/${room}`} activeClassName="selected">
                   {room}
                 </NavLink>
+                {room !== 'general' ? (
+                  <button
+                    type="button"
+                    className="sidebar-section-list-item-remove"
+                    onClick={() => this.props.removeRoom(room)}
+                  >
+                  ×
+                  </button>
+                ) : undefined}
               </li>
             )) : undefined}
           </ul>

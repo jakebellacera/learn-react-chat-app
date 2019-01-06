@@ -8,6 +8,7 @@ it('renders without crashing', () => {
       rooms={['foo']}
       room="foo"
       addRoom={jest.fn()}
+      removeRoom={jest.fn()}
     />
   );
 });
