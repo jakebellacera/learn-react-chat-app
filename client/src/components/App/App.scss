@@ -3,7 +3,7 @@
 
   &-container {
     display: grid;
-    grid-template-columns: [sidebar] 300px [main] auto [meta] 400px;
+    grid-template-columns: [sidebar] 300px [main] auto;
     height: 100%;
   }
 }

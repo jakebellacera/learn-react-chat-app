@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './App.scss';
 import Sidebar from '../Sidebar';
 import Main from '../Main';
-import Meta from '../Meta';
 import Modal from '../Modal';
 import WelcomeUserMessage from '../../containers/WelcomeUserMessage';
 
@@ -43,7 +42,6 @@ const App = ({ username }) => (
             <div className="app-container">
               <Sidebar room={room} />
               <Main room={room} />
-              <Meta />
             </div>
           );
         } else if (username) {
