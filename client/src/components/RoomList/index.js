@@ -50,28 +50,30 @@ class RoomList extends Component {
 
   render() {
     return (
-      <section className="sidebar-section">
-        <header className="sidebar-section-header">
-          Rooms
-          <button
-            type="button"
-            className="sidebar-section-header-button"
-            onClick={(e) => this.handleButtonClick(e)}
-          >
-            + Join room
-          </button>
-        </header>
-        <ul className="sidebar-section-list">
-          {this.props.rooms ? this.props.rooms.map((room) => (
-            <li
-              key={room}
-              className="sidebar-section-list-item sidebar-section-list-item-room">
-              <NavLink to={`/rooms/${room}`} activeClassName="selected">
-                {room}
-              </NavLink>
-            </li>
-          )) : undefined}
-        </ul>
+      <div>
+        <section className="sidebar-section">
+          <header className="sidebar-section-header">
+            Rooms
+            <button
+              type="button"
+              className="sidebar-section-header-button"
+              onClick={(e) => this.handleButtonClick(e)}
+            >
+              + Join room
+            </button>
+          </header>
+          <ul className="sidebar-section-list">
+            {this.props.rooms ? this.props.rooms.map((room) => (
+              <li
+                key={room}
+                className="sidebar-section-list-item sidebar-section-list-item-room">
+                <NavLink to={`/rooms/${room}`} activeClassName="selected">
+                  {room}
+                </NavLink>
+              </li>
+            )) : undefined}
+          </ul>
+        </section>
         <Modal
           open={this.state.joinModalOpen}
           userCanClose
@@ -109,7 +111,7 @@ class RoomList extends Component {
             </form>
           </div>
         )} />
-      </section>
+      </div>
     );
   }
 }
